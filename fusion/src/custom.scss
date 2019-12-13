@@ -1,0 +1,54 @@
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+$font-stack: 'Nunito', sans-serif;
+$primary-color: #873260;
+$white: #FFF;
+$grey: #8A8A8A;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    letter-spacing: 0.025rem;
+  }
+
+  a {
+    color: $primary-color;
+  }
+  
+  a:hover {
+    color: $primary-color !important;
+    text-decoration: none;
+  }
+
+  .nav-link {
+    font-weight: 600;
+  }
+  
+  .nav-link:hover {
+    color: $white !important;
+    text-decoration: none;
+  }
+
+  .navbar-brand {
+      color: $white !important;
+  }
+
+  .navbar-brand:hover {
+    color: $grey !important;
+}
+
+  .james:hover {
+      color: #55B7D3 !important;
+  }
+
+  .jumbotron {
+      padding-top: 15%;
+      height: 85vh !important;
+      background-color: $white;
+  }
+
+  .footer {
+      background-color: #E9ECEF !important;
+  }
