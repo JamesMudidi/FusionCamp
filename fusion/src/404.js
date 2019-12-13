@@ -9,15 +9,14 @@ const NotFound = ({ location }) => {
     <div>
       <Header />
       <section className="not-found">
-      <Container>
-        <div className="not-found-text" align="center">
-          <h1>404</h1>
-          <h3>
-            Page not found.
+        <Container>
+          <div className="not-found-text" align="center">
+            <h1>404</h1>
+            <h3>
+              Oh Snap! Page not found.
           </h3>
-          <a href="/">Back to home page.</a>
-        </div>
-      </Container>
+          </div>
+        </Container>
       </section>
       <Footer />
     </div>

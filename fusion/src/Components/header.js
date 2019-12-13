@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <Navbar sticky="top" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Fusion Camp</Navbar.Brand>
+                    <Navbar.Brand href="/">Fusion Camp</Navbar.Brand>
                     <Nav className="ml-auto">
                         <Nav.Link href="/login">Login</Nav.Link>
                         <Nav.Link href="/register">Register</Nav.Link>

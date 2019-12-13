@@ -44,11 +44,33 @@ body {
   }
 
   .jumbotron {
-      padding-top: 15%;
-      height: 85vh !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
       background-color: $white;
   }
 
   .footer {
       background-color: #E9ECEF !important;
+  }
+
+  .not-found {
+    height: 550px;
+  }
+  
+  .not-found-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .not-found-text h1 {
+    font-size: 7rem;
+    font-weight: 700;
+  }
+  
+  .not-found-text h3 {
+    font-weight: 600;
   }
