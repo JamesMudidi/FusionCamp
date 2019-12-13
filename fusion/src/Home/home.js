@@ -15,11 +15,12 @@ const Home = () => {
             <h1>
               St. Kakumba Chapel Presents
               <br />
-              <Badge variant="dark">Fusion Camp 2020</Badge><br />
+              <Badge variant="dark">Fusion Camp 2020</Badge>&nbsp;
               <Badge variant="dark">6 - 10 January 2020</Badge>
             </h1>
             <h4>
-              Register now for a fun packed get away at camp
+            <br />
+              Register now for a fun packed get away at
             </h4>
             <h1>
             <Badge variant="secondary">UShs 60, 000</Badge>

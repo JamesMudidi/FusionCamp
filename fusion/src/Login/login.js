@@ -2,7 +2,7 @@ import React from "react";
 import { Jumbotron, Container, Badge } from "react-bootstrap";
 import Header from "../Components/header";
 import Footer from "../Components/footer";
-import "./home.scss";
+import "./login.scss";
 
 
 const Login = () => {
