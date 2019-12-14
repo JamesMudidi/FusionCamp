@@ -1,87 +1,131 @@
 import React from "react";
-import { Jumbotron, Container, Button } from "react-bootstrap";
+import { Jumbotron, Container, Button, Form, Row } from "react-bootstrap";
 import Header from "../Components/header";
 import Footer from "../Components/footer";
 import "./register.scss";
 import "../Login/login.scss";
 
 
-
 const Register = () => {
-  return (
-    <div>
-      <Header />
-      <div>
-      <Jumbotron fluid className="content-left">
-          <Container >
-            <h4>
-              Hello<br/>
-              We are so glad you are here.<br/>
-              <br/>
-              Just do the typing typing on<br/>
-              the left and you will get your<br/>
-              own set of keys to the app<br/>
-              
-            </h4>
-          </Container>
-        </Jumbotron>
+    return (
+        <div>
+            <Header />
+            <div>
+                <Jumbotron fluid className="content-left">
+                    <Container >
+                        <h4>
+                            We are glad you have made<br />
+                            it this far.<br />
+                            <br />
+                            A little more typing typing<br />
+                            on the right and you would have<br />
+                            registered for the St. Kakumba <br />
+                            Chapel Fusion Camp 2020.<br />
 
-      <Jumbotron fluid className="content-right">
-          <Container >
-            <h1>
-              Register
-            </h1>
-            <div className="form">
-                <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">First Name</span>
-                </label>
+                        </h4>
+                    </Container>
+                </Jumbotron>
+
+                <Jumbotron fluid className="content-right">
+                    <Container >
+                        <h1>
+                            Register
+                        </h1>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">First Name</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Last Name</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Other Names</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="date" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="number" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Phone Number</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Who owns the number above?</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="email" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Email</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Who owns the email above?</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Next of Kin's name</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="number" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Next of Kin's number</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Relation to next of Kin</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Tribe</span>
+                            </label>
+                        </div>
+                        <div className="form">
+                            <input type="text" name="name" autoComplete="off" required />
+                            <label for="name" className="label-name">
+                                <span className="content-name">Home Church</span>
+                            </label>
+                        </div>
+                        <Form.Group as={Row} controlId="formGridState">
+                            <Form.Control as="select">
+                            <option>Compassion International</option>
+                            <option>Kyampisi</option>
+                            <option>Self Sponsored</option>
+                            </Form.Control>
+                        </Form.Group>
+
+
+                        <Button type="submit" className="button">
+                            Submit
+                        </Button>
+                    </Container>
+                </Jumbotron>
             </div>
-            <div className="form">
-                <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">Last Name</span>
-                </label>
-            </div>
-            <div className="form">
-                <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">User Name</span>
-                </label>
-            </div>
-            <div className="form">
-                <input type="email" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">Email</span>
-                </label>
-            </div>
-            <div className="form">
-                <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">Role</span>
-                </label>
-            </div>
-            <div className="form">
-                <input type="password" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">Password</span>
-                </label>
-            </div>
-            <div className="form">
-                <input type="password" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
-                    <span className="content-name">Confirm Password</span>
-                </label>
-            </div>
-            <Button type="submit" className="button">
-                Submit
-            </Button>
-          </Container>
-        </Jumbotron>
-      </div>
-      <Footer />
-    </div>
-  );
+            <Footer />
+        </div>
+    );
 };
 
 export default Register;

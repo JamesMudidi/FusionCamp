@@ -9,6 +9,7 @@ class Header extends Component {
                     <Navbar.Brand href="/">Fusion Camp</Navbar.Brand>
                     <Nav className="ml-auto">
                         <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/signup">Sign up</Nav.Link>
                         <Nav.Link href="/register">Register</Nav.Link>
                     </Nav>
                 </Container>

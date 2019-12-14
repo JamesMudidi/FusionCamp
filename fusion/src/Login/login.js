@@ -14,13 +14,12 @@ const Login = () => {
           <Container >
             <h4>
               Feel free to unlock the door to<br/>
-              our app and register a Camper<br/>
+              our app and Sign up a Camper<br/>
               or yourself.<br/>
               <br/>
               If you don't have the keys yet,<br/>
               No worries. Access them by <br/>
-              registering
-              
+              Sign uping.
             </h4>
           </Container>
         </Jumbotron>
