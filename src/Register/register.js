@@ -33,78 +33,78 @@ const Register = () => {
                         </h1>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">First Name</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Last Name</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Other Names</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="date" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                             </label>
                         </div>
                         <div className="form">
                             <input type="number" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Phone Number</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Who owns the number above?</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="email" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Email</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Who owns the email above?</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Next of Kin's name</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="number" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Next of Kin's number</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Relation to next of Kin</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Tribe</span>
                             </label>
                         </div>
                         <div className="form">
                             <input type="text" name="name" autoComplete="off" required />
-                            <label for="name" className="label-name">
+                            <label form="name" className="label-name">
                                 <span className="content-name">Home Church</span>
                             </label>
                         </div>
@@ -115,8 +115,6 @@ const Register = () => {
                             <option>Self Sponsored</option>
                             </Form.Control>
                         </Form.Group>
-
-
                         <Button type="submit" className="button">
                             Submit
                         </Button>

@@ -31,13 +31,13 @@ const Login = () => {
             </h1>
             <div className="form">
                 <input type="email" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Email</span>
                 </label>
             </div>
             <div className="form">
                 <input type="password" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Password</span>
                 </label>
             </div>

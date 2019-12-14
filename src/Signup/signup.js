@@ -32,43 +32,43 @@ const Signup = () => {
             </h1>
             <div className="form">
                 <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">First Name</span>
                 </label>
             </div>
             <div className="form">
                 <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Last Name</span>
                 </label>
             </div>
             <div className="form">
                 <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">User Name</span>
                 </label>
             </div>
             <div className="form">
                 <input type="email" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Email</span>
                 </label>
             </div>
             <div className="form">
                 <input type="text" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Role</span>
                 </label>
             </div>
             <div className="form">
                 <input type="password" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Password</span>
                 </label>
             </div>
             <div className="form">
                 <input type="password" name="name" autoComplete="off" required />
-                <label for="name" className="label-name">
+                <label form="name" className="label-name">
                     <span className="content-name">Confirm Password</span>
                 </label>
             </div>
