@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <Header />
       <div>
-        <Jumbotron fluid>
+      <Jumbotron fluid>
           <Container >
             <h1>
               St. Kakumba Chapel Presents
@@ -20,7 +20,7 @@ const Home = () => {
             </h1>
             <h4>
             <br />
-              Register now for a fun packed get away at
+              Sign up now for a fun packed get away at only
             </h4>
             <h1>
             <Badge variant="secondary">UShs 60, 000</Badge>
