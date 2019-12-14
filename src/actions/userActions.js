@@ -15,7 +15,7 @@ const authenticate = () => ({
 
 const signupSuccess = response => ({
   type: REGISTER_SUCCESS,
-  payload: response.data.user,
+  payload: response.data.data[0],
 });
 
 // const signupFail = error => ({
@@ -94,9 +94,10 @@ export const signupAction = user => (dispatch) => {
 export const loginAction = (email, password) => (dispatch) => {
   dispatch({
     type: AUTHENTICATE,
+    loginAction: loginAction()
   });
   axios
-    .post(`${baseURL}login`, { email, password })
+    .post(`${baseURL}api/auth/login`, { email, password })
     .then((response) => {
       dispatch(signupSuccess(response));
       sessionStorage.setItem('token', response.data.token);
@@ -113,16 +114,16 @@ export const loginAction = (email, password) => (dispatch) => {
     .catch((error) => {
       dispatch({
         type: LOGIN_FAIL,
-        payload: error.response.data.message,
+        payload: error.response,
       });
-      if (error.response.data.message.email) {
-        const emailError = error.response.data.message.email;
+      if (error.response) {
+        const emailError = error.response;
         toast.error(`:( ${emailError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 3000,
         });
       }
-      if (error.response.data.message.password) {
+      if (error.response) {
         const passwordError = error.response.data.message.password;
         toast.error(`:( ${passwordError}`, {
           position: toast.POSITION.TOP_RIGHT,
