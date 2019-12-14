@@ -97,7 +97,7 @@ export const loginAction = (email, password) => (dispatch) => {
     loginAction: loginAction()
   });
   axios
-    .post(`${baseURL}api/auth/login`, { email, password })
+    .post(`${baseURL}api/auth/login/`, { email, password })
     .then((response) => {
       dispatch(signupSuccess(response));
       sessionStorage.setItem('token', response.data.token);
