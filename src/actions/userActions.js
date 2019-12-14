@@ -124,7 +124,7 @@ export const loginAction = (email, password) => (dispatch) => {
         });
       }
       if (error.response) {
-        const passwordError = error.response.data.message.password;
+        const passwordError = error.response;
         toast.error(`:( ${passwordError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 3000,
