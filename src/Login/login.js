@@ -24,25 +24,14 @@ class Login extends Component {
   }
 
   onSubmitHandler = () => {
-    const { loginAction } = this.props;
-    const {
-      email,
-      password,
-    } = this.state;
-    loginAction(
-      email,
-      password,
-    );
+    const { Login } = this.props;
+    const {email, password} = this.state;
+    Login(email,password);
   };
 
   render() {
-    const {
-      email,
-      password,
-    } = this.state;
-    const {
-      isLoading,
-    } = this.props;
+    const {email,password} = this.state;
+    const {isLoading} = this.props;
 
     return (
       <div>
@@ -78,7 +67,7 @@ class Login extends Component {
                   className="form-control"
                   onChange={this.onChangeHandler}
                   value={email}
-                  name="name"
+                  name="email"
                   autoComplete="off"
                   required />
                 <label form="name" className="label-name">
@@ -91,7 +80,7 @@ class Login extends Component {
                   className="form-control"
                   onChange={this.onChangeHandler}
                   value={password}
-                  name="name"
+                  name="password"
                   autoComplete="off"
                   required />
                 <label form="name" className="label-name">
@@ -110,32 +99,18 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  const {
-    isLoading, loginErrors, data
-  } = state.loginReducer;
-  return {
-    isLoading, loginErrors, data
-  };
-};
-
-const mapDispatchToProps = dispatch => ({
-  Login: ({
-    email,
-    password
-  }) => {
-    dispatch(
-      loginAction({
-        email,
-      password
-      }),
+const mapStateToProps = state => ({
+  Login: ({email,password}) => {
+    state(loginAction({email,password})
     );
-  },
+  }
 });
 
-// login: state.loginReducer.data,
-//   isLoading: state.loginReducer.isLoading,
-//     loginErrors: state.loginReducer.loginErrors,
-// };
+const mapDispatchToProps = dispatch => ({
+  Login: () => {
+    dispatch(loginAction()
+    );
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
