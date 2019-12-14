@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <Header />
       <div>
-        <Jumbotron fluid>
+      <Jumbotron fluid>
           <Container >
             <h1>
               St. Kakumba Chapel Presents

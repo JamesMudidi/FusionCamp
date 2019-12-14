@@ -10,13 +10,28 @@ const Login = () => {
     <div>
       <Header />
       <div>
-        <Jumbotron fluid>
+      <Jumbotron fluid className="content-left">
+          <Container >
+            <h4>
+              Feel free to unlock the door to<br/>
+              our app and register a Camper<br/>
+              or yourself.<br/>
+              <br/>
+              If you don't have the keys yet,<br/>
+              No worries. Access them by <br/>
+              registering
+              
+            </h4>
+          </Container>
+        </Jumbotron>
+
+        <Jumbotron fluid className="content-right">
           <Container >
             <h1>
               Login
             </h1>
             <div className="form">
-                <input type="text" name="name" autoComplete="off" required />
+                <input type="email" name="name" autoComplete="off" required />
                 <label for="name" className="label-name">
                     <span className="content-name">Email</span>
                 </label>
