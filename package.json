@@ -18,10 +18,18 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "webpack-dev-server --open --hot --mode development",
+    "start": "node server.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "webpack --mode production",
+    "lint": "eslint",
+    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
   },
   "eslintConfig": {
     "extends": "react-app"
