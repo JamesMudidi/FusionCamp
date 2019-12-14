@@ -9,7 +9,7 @@ class Footer extends Component {
                 <Container>
                     <Nav className="ml-auto">
                         <Navbar.Text>
-                        scripted by &copy;: <a href="https://github.com/JamesMudidi" className="james">James Mudidi</a>
+                        <b>scripted by: &copy;</b> <a href="https://github.com/JamesMudidi" className="james"><b>James Mudidi</b></a>
                         </Navbar.Text>
                     </Nav>
                 </Container>
