@@ -25,13 +25,13 @@ class Login extends Component {
 
   onSubmitHandler = () => {
     const { Login } = this.props;
-    const {email, password} = this.state;
-    Login(email,password);
+    const { email, password } = this.state;
+    Login(email, password);
   };
 
   render() {
-    const {email,password} = this.state;
-    const {isLoading} = this.props;
+    const { email, password } = this.state;
+    const { isLoading } = this.props;
 
     return (
       <div>
@@ -100,8 +100,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  Login: ({email,password}) => {
-    state(loginAction({email,password})
+  Login: ({ email, password }) => {
+    state(loginAction({ email, password })
     );
   }
 });

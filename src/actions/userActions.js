@@ -2,9 +2,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import {
   AUTHENTICATE,
-  REGISTER_SUCCESS,
+  SIGNUP_SUCCESS,
   LOGIN_FAIL,
-  REGISTER_FAIL,
+  SIGNUP_FAIL,
 } from './types';
 
 const baseURL = 'https://fusion-v1.herokuapp.com/';
@@ -14,7 +14,7 @@ const authenticate = () => ({
 });
 
 const signupSuccess = response => ({
-  type: REGISTER_SUCCESS,
+  type: SIGNUP_SUCCESS,
   payload: response.data.data[0],
 });
 
@@ -24,10 +24,10 @@ const signupSuccess = response => ({
 // });
 
 
-export const signupAction = user => (dispatch) => {
+export const signupAction = (first_name, last_name, role, email, username, password, confirmed_password) => (dispatch) => {
   dispatch(authenticate());
   axios
-    .post(`${baseURL}signup`, user)
+    .post(`${baseURL}api/auth/register/`, {first_name, last_name, role, email, username, password, confirmed_password})
     .then((response) => {
       dispatch(signupSuccess(response));
       sessionStorage.setItem('token', response.data.token);
@@ -43,46 +43,46 @@ export const signupAction = user => (dispatch) => {
     })
     .catch((error) => {
       dispatch({
-        type: REGISTER_FAIL,
-        payload: error.response.data.message,
+        type: SIGNUP_FAIL,
+        payload: error.data,
       });
-      if (error.response.data.message.firstname) {
-        const firstnameError = error.response.data.message.firstname;
+      if (error.response.data.response) {
+        const firstnameError = error.response.error.data.first_name;
         toast.error(`:( ${firstnameError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
         });
       }
-      if (error.response.data.message.lastname) {
-        const lastnameError = error.response.data.message.lastname;
+      if (error.response) {
+        const lastnameError = error.response.data.last_name;
         toast.error(`:( ${lastnameError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
         });
       }
-      if (error.response.data.message.username) {
-        const usernameError = error.response.data.message.username;
+      if (error.response) {
+        const usernameError = error.response.data.username;
         toast.error(`:( ${usernameError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
         });
       }
-      if (error.response.data.message.email) {
-        const emailError = error.response.data.message.email;
+      if (error.response) {
+        const emailError = error.response.data.email;
         toast.error(`:( ${emailError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
         });
       }
-      if (error.response.data.message.phonenumber) {
-        const phonenumberError = error.response.data.message.phonenumber;
-        toast.error(`:( ${phonenumberError}`, {
+      if (error.response) {
+        const passwordError = error.response.data.password;
+        toast.error(`:( ${passwordError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
         });
       }
-      if (error.response.data.message.password) {
-        const passwordError = error.response.data.message.password;
+      if (error.response) {
+        const passwordError = error.response;
         toast.error(`:( ${passwordError}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 5000,
@@ -114,7 +114,7 @@ export const loginAction = (email, password) => (dispatch) => {
     .catch((error) => {
       dispatch({
         type: LOGIN_FAIL,
-        payload: error.response,
+        payload: error.response.data,
       });
       if (error.response) {
         const emailError = error.response;
