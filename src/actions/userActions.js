@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import {
   AUTHENTICATE,
   SIGNUP_SUCCESS,
+  LOGIN_SUCCESS,
   LOGIN_FAIL,
   SIGNUP_FAIL,
 } from './types';
@@ -15,6 +16,11 @@ const authenticate = () => ({
 
 const signupSuccess = response => ({
   type: SIGNUP_SUCCESS,
+  payload: response.data.data[0],
+});
+
+const loginSuccess = response => ({
+  type: LOGIN_SUCCESS,
   payload: response.data.data[0],
 });
 
@@ -91,44 +97,34 @@ export const signupAction = (first_name, last_name, role, email, username, passw
     });
 };
 
-export const loginAction = (email, password) => (dispatch) => {
+export const loginAction = (email, password) => async dispatch => {
+  toast.dismiss();
   dispatch({
-    type: AUTHENTICATE,
-    loginAction: loginAction()
+    type: AUTHENTICATE
   });
-  axios
-    .post(`${baseURL}api/auth/login/`, { email, password })
-    .then((response) => {
-      dispatch(signupSuccess(response));
-      sessionStorage.setItem('token', response.data.token);
-      sessionStorage.setItem('username', response.data.user.username);
-      window.location.replace('/');
-      if (response.data.message) {
-        const successMessage = response.data.message;
-        toast.success(`:( ${successMessage}`, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 5000,
-        });
-      }
-    })
-    .catch((error) => {
-      dispatch({
-        type: LOGIN_FAIL,
-        payload: error.response.data,
-      });
-      if (error.response) {
-        const emailError = error.response;
-        toast.error(`:( ${emailError}`, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000,
-        });
-      }
-      if (error.response) {
-        const passwordError = error.response;
-        toast.error(`:( ${passwordError}`, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000,
-        });
-      }
+  try {
+    const response = await axios.post(
+      `${baseURL}api/auth/login/`,
+      { email, password }
+    );
+    dispatch(loginSuccess(response));
+    sessionStorage.setItem("token", response.data.token);
+    toast.success(`${response.data.message}`, {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000,
+      hideProgressBar: false,
+      onClose: window.location.replace('/')
     });
+  } catch (error) {
+    dispatch({  
+      type: LOGIN_FAIL
+    });
+    const message = error.response.data;
+    console.log(message)
+    toast.error(`${message}`, {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000,
+      hideProgressBar: false,
+    });
+  }
 };
