@@ -26,7 +26,6 @@ class Login extends Component {
   onSubmitHandler = () => {
 
     const { email, password } = this.state;
-    console.log(email," ",password);
 
     this.props.loginAction(email, password)
   };
