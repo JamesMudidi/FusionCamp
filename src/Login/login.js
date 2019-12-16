@@ -24,9 +24,10 @@ class Login extends Component {
   }
 
   onSubmitHandler = () => {
-    const { Login } = this.props;
+
     const { email, password } = this.state;
-    Login(email, password);
+
+    this.props.loginAction(email, password)
   };
 
   render() {
@@ -100,17 +101,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  Login: ({ email, password }) => {
-    state(loginAction({ email, password })
-    );
-  }
+  isLoading: state.auth.isLoading
 });
 
-const mapDispatchToProps = dispatch => ({
-  Login: () => {
-    dispatch(loginAction()
-    );
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, {loginAction})(Login);

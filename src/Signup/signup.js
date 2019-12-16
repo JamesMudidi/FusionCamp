@@ -32,7 +32,7 @@ class Signup extends Component {
   onSubmitHandler = () => {
     const { Signup } = this.props;
     const { first_name, last_name, role, email, username, password, confirmed_password } = this.state;
-    Signup(first_name, last_name, role, email, username, password, confirmed_password);
+    Signup({ first_name, last_name, role, email, username, password, confirmed_password });
   };
 
   render() {
@@ -165,23 +165,14 @@ class Signup extends Component {
           </Jumbotron>
         </div>
         <Footer />
-        </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  Signup: ({ first_name, last_name, role, email, username, password, confirmed_password }) => {
-    state(signupAction({ first_name, last_name, role, email, username, password, confirmed_password })
-    );
-  }
+  isLoading: state.auth.isLoading
 });
 
-const mapDispatchToProps = dispatch => ({
-  Signup: () => {
-    dispatch(signupAction()
-    );
-  }
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, { Signup: signupAction })(Signup);
