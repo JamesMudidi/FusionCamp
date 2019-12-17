@@ -121,6 +121,5 @@ export const loginAction = (email, password) => async dispatch => {
 
       });
     });
-
   }
 };
