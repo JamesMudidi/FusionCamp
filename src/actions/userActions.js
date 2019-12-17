@@ -40,7 +40,7 @@ export const signupAction = (userInfo) => async dispatch => {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 3000,
       hideProgressBar: false,
-      onClose: window.location.replace('/api/client/')
+      onClose: window.location.replace('/register')
     });
   }
   catch (error) {
@@ -108,7 +108,7 @@ export const loginAction = (email, password) => async dispatch => {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 3000,
       hideProgressBar: false,
-      onClose: window.location.replace('/api/client/')
+      onClose: window.location.replace('/register')
     });
   } catch (error) {
     dispatch({
